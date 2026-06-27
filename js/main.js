@@ -57,8 +57,10 @@ function closeCover() {
 function showBlurb() {
   document.getElementById('cover-overlay').style.display = 'none';
   document.getElementById('blurb-text').textContent = currentBook.blurb;
+  document.getElementById('blurb-category').textContent = `${currentBook.category} · ${currentBook.number}`;
   document.getElementById('blurb-read-link').href = currentBook.file;
-  document.getElementById('blurb-overlay').style.display = 'flex';
+  const bc = document.querySelector('.book-blurb');
+  bc.style.background = `linear-gradient(160deg, ${currentBook.color} 0%, ${darken(currentBook.color, 30)} 100%)`;
 }
 
 function handleBlurbClick() {
