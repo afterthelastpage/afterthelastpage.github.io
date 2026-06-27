@@ -68,9 +68,14 @@
     <!-- Book overlay: blurb / back cover -->
     <div class="overlay" id="blurb-overlay" style="display:none;" onclick="handleBlurbClick()">
       <div class="book-blurb" id="book-blurb" onclick="event.stopPropagation()">
-        <p class="blurb-label">— back cover —</p>
-        <p class="blurb-text" id="blurb-text"></p>
-        <div class="blurb-actions">
+        <div class="blurb-inner">
+  <p class="blurb-category" id="blurb-category"></p>
+  <div class="blurb-rule"></div>
+  <p class="blurb-text" id="blurb-text"></p>
+  <div class="blurb-rule"></div>
+  <p class="blurb-author">— Otsuka</p>
+</div>
+<div class="blurb-actions">
           <button onclick="closeBlurb()">← back</button>
           <a class="blurb-read-btn" id="blurb-read-link" href="#">read →</a>
         </div>
