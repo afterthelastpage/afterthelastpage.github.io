@@ -1,0 +1,745 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=IM+Fell+English:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap');
+
+/* ============================================================
+   RESET & BASE
+============================================================ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'IM Fell English', serif;
+  background: #f0ebe0;
+}
+
+.page-bg {
+  min-height: 100vh;
+  background: #f0ebe0;
+  background-image:
+    linear-gradient(#d6cfc0 1px, transparent 1px),
+    linear-gradient(90deg, #d6cfc0 1px, transparent 1px);
+  background-size: 28px 28px;
+  padding-bottom: 48px;
+}
+
+/* ============================================================
+   HEADER
+============================================================ */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 32px 8px;
+  position: relative;
+}
+
+.monogram {
+  position: absolute;
+  left: 32px;
+  font-family: 'IM Fell English', serif;
+  font-size: 28px;
+  color: #8b4513;
+  line-height: 1;
+}
+.monogram sup { font-size: 14px; vertical-align: super; }
+
+.site-title {
+  font-family: 'Pacifico', cursive;
+  font-size: 36px;
+  color: #8b4513;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+}
+
+/* ============================================================
+   NAV
+============================================================ */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 36px;
+  padding: 6px 0 18px;
+  border-bottom: 1px solid #c8b898;
+  margin-bottom: 24px;
+}
+
+nav a {
+  font-family: 'IM Fell English', serif;
+  font-size: 15px;
+  color: #5a3a1a;
+  text-decoration: none;
+}
+nav a:hover { text-decoration: underline; }
+
+/* ============================================================
+   MAIN LAYOUT
+============================================================ */
+main {
+  display: flex;
+  gap: 28px;
+  padding: 0 32px;
+  align-items: flex-start;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ============================================================
+   SHELF
+============================================================ */
+.shelf-section { flex: 1; }
+
+.shelf-label {
+  font-family: 'IM Fell English', serif;
+  font-size: 18px;
+  color: #3a2010;
+  margin-bottom: 12px;
+}
+
+.shelf-wrap { position: relative; width: 100%; }
+
+.shelf-box {
+  background: #c8a870;
+  border-radius: 6px;
+  border: 3px solid #a07840;
+  padding: 10px 10px 0 10px;
+  box-shadow:
+    inset 0 -8px 0 #8a5c28,
+    inset 0 0 16px rgba(0,0,0,0.2),
+    4px 6px 16px rgba(60,30,10,0.3);
+}
+
+.books-row {
+  display: flex;
+  align-items: flex-end;
+  gap: 4px;
+  min-height: 170px;
+  flex-wrap: wrap;
+}
+
+.shelf-floor {
+  height: 18px;
+  background: #b08040;
+  border-radius: 0 0 4px 4px;
+  margin: 0 -10px;
+  border-top: 3px solid #8a5c28;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.28);
+}
+
+/* ============================================================
+   INDIVIDUAL BOOKS
+============================================================ */
+.book {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: 2px 4px 4px 2px;
+  border-left: 3px solid rgba(0,0,0,0.25);
+  border-right: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  flex-shrink: 0;
+  box-shadow: 2px 0 4px rgba(0,0,0,0.2);
+}
+.book:hover {
+  transform: translateY(-10px);
+  box-shadow: 2px 6px 12px rgba(0,0,0,0.35);
+}
+
+.book-spine-title {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: 'IM Fell English', serif;
+  font-size: 11px;
+  color: rgba(255,255,255,0.88);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+  padding: 8px 2px;
+  line-height: 1.2;
+  text-align: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ============================================================
+   SIGNUP CARD
+============================================================ */
+.card-section { width: 230px; flex-shrink: 0; }
+
+.card-heading {
+  font-family: 'IM Fell English', serif;
+  font-size: 18px;
+  color: #3a2010;
+  margin-bottom: 10px;
+}
+
+.library-card-signup {
+  background: #3a6080;
+  border-radius: 6px;
+  padding: 16px;
+  font-family: 'Special Elite', monospace;
+  color: #e8f0f8;
+  font-size: 11px;
+  line-height: 2;
+}
+
+.card-line span { color: #a8c8e8; }
+.card-line .field { font-style: italic; }
+
+.card-input-row {
+  display: flex;
+  gap: 6px;
+  margin-top: 12px;
+}
+.card-input-row input {
+  flex: 1;
+  font-family: 'Special Elite', monospace;
+  font-size: 9px;
+  padding: 6px 8px;
+  border: none;
+  border-radius: 3px;
+  background: #e8d8b0;
+  color: #3a2010;
+  min-width: 0;
+}
+.card-input-row input::placeholder { color: #8a6840; }
+.card-input-row button {
+  font-family: 'Special Elite', monospace;
+  font-size: 10px;
+  padding: 6px 10px;
+  background: #c8a030;
+  color: #3a2010;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+  font-weight: bold;
+}
+.card-input-row button:hover { background: #d8b040; }
+.join-confirm {
+  color: #a8e8b8;
+  font-size: 11px;
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ============================================================
+   OVERLAYS
+============================================================ */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 15, 5, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  backdrop-filter: blur(3px);
+}
+
+/* FRONT COVER */
+.book-cover {
+  width: 260px;
+  min-height: 360px;
+  border-radius: 4px 12px 12px 4px;
+  border-left: 10px solid rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 24px 24px;
+  box-shadow:
+    -4px 0 12px rgba(0,0,0,0.4),
+    6px 8px 24px rgba(0,0,0,0.5);
+  position: relative;
+  cursor: default;
+}
+.book-cover::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px 12px 12px 4px;
+  background: repeating-linear-gradient(
+    transparent, transparent 19px, rgba(0,0,0,0.04) 20px
+  );
+  pointer-events: none;
+}
+
+.cover-inner {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.cover-category {
+  font-family: 'Special Elite', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+}
+.cover-title {
+  font-family: 'IM Fell English', serif;
+  font-size: 26px;
+  color: #fff;
+  line-height: 1.25;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+.cover-deco {
+  width: 40px;
+  height: 1px;
+  background: rgba(255,255,255,0.4);
+  margin: 4px auto;
+}
+.cover-author {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+}
+.cover-btn {
+  font-family: 'Special Elite', monospace;
+  font-size: 11px;
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  transition: background 0.15s;
+  margin-top: 8px;
+}
+.cover-btn:hover { background: rgba(255,255,255,0.28); }
+
+/* BLURB / BACK COVER */
+.book-blurb {
+  width: 300px;
+  background: #f5edd8;
+  border-radius: 4px 12px 12px 4px;
+  border-left: 10px solid #5a3a1a;
+  padding: 32px 28px 24px;
+  box-shadow: 6px 8px 24px rgba(0,0,0,0.5);
+  cursor: default;
+}
+.blurb-label {
+  font-family: 'Special Elite', monospace;
+  font-size: 9px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9a7040;
+  text-align: center;
+  margin-bottom: 18px;
+}
+.blurb-text {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 15px;
+  color: #3a2010;
+  line-height: 1.8;
+  text-align: center;
+  margin-bottom: 28px;
+}
+.blurb-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blurb-actions button {
+  font-family: 'Special Elite', monospace;
+  font-size: 10px;
+  padding: 6px 12px;
+  background: none;
+  color: #7a5030;
+  border: 1px solid #c8a870;
+  border-radius: 2px;
+  cursor: pointer;
+  letter-spacing: 0.08em;
+}
+.blurb-actions button:hover { background: #e8d8b8; }
+.blurb-read-btn {
+  font-family: 'Special Elite', monospace;
+  font-size: 10px;
+  padding: 6px 16px;
+  background: #8b4513;
+  color: #f5edd8;
+  border-radius: 2px;
+  text-decoration: none;
+  letter-spacing: 0.08em;
+  transition: background 0.15s;
+}
+.blurb-read-btn:hover { background: #a05525; }
+
+/* ============================================================
+   POST PAGE (open book layout)
+============================================================ */
+.book-spread {
+  display: flex;
+  max-width: 780px;
+  margin: 32px auto;
+  padding: 0 16px;
+  min-height: 520px;
+  filter: drop-shadow(0 12px 32px rgba(20,10,0,0.5));
+}
+
+.page-left {
+  flex: 1;
+  background: #f5edd8;
+  border-radius: 1px 0 0 1px;
+  padding: 36px 28px 36px 36px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.page-left::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(transparent, transparent 27px, rgba(160,130,90,0.12) 28px);
+  pointer-events: none;
+}
+
+.page-right {
+  flex: 1;
+  background: #ede4cb;
+  border-radius: 0 8px 8px 0;
+  padding: 36px 36px 36px 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+.page-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(transparent, transparent 27px, rgba(140,110,70,0.1) 28px);
+  pointer-events: none;
+}
+
+.book-spine-divider {
+  width: 28px;
+  flex-shrink: 0;
+  background: linear-gradient(to right, #2a1a08 0%, #5a3a18 30%, #7a5228 55%, #5a3a18 75%, #3a2010 100%);
+  position: relative;
+  z-index: 2;
+}
+
+.page-num {
+  font-family: 'IM Fell English', serif;
+  font-size: 11px;
+  color: #9a8060;
+  text-align: center;
+  margin-bottom: 16px;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+}
+
+.post-category-label {
+  font-family: 'Special Elite', monospace;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #b08040;
+  margin-bottom: 8px;
+  position: relative;
+  z-index: 1;
+}
+.post-h1 {
+  font-family: 'IM Fell English', serif;
+  font-size: 22px;
+  color: #2c1a08;
+  line-height: 1.25;
+  margin-bottom: 4px;
+  position: relative;
+  z-index: 1;
+}
+.post-subtitle-line {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 12.5px;
+  color: #7a5030;
+  line-height: 1.5;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+.post-rule { border: none; border-top: 1px solid #c8a870; margin: 10px 0; position: relative; z-index: 1; }
+
+.post-body {
+  font-family: 'IM Fell English', serif;
+  font-size: 13px;
+  color: #2c1a08;
+  line-height: 1.9;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+.post-body p { margin-bottom: 1rem; }
+.post-body p:first-child::first-letter {
+  font-size: 46px;
+  line-height: 0.75;
+  float: left;
+  margin: 3px 5px 0 0;
+  color: #8b3a10;
+  font-family: 'IM Fell English', serif;
+  font-weight: 700;
+}
+.post-body blockquote {
+  border-left: 2px solid #c8a870;
+  padding: 3px 0 3px 12px;
+  margin: 14px 0;
+  font-style: italic;
+  font-size: 12.5px;
+  color: #6a4020;
+  line-height: 1.65;
+}
+
+.post-fin {
+  text-align: center;
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  font-size: 13px;
+  color: #a08050;
+  margin-top: auto;
+  padding-top: 16px;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+}
+
+/* LIBRARY CARD on right page */
+.back-cover-label {
+  font-family: 'Special Elite', monospace;
+  font-size: 8px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #9a8060;
+  text-align: center;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.lib-card-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.lib-card {
+  width: 190px;
+  background: #fffbf0;
+  border: 1px solid #c8a060;
+  padding: 12px 14px;
+  font-family: 'Special Elite', monospace;
+  transform: rotate(-1.5deg);
+  box-shadow: 2px 3px 12px rgba(60,30,10,0.35);
+  position: relative;
+}
+.lib-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 0% 0%, rgba(180,140,80,0.2) 0%, transparent 22%),
+    radial-gradient(circle at 100% 100%, rgba(180,140,80,0.2) 0%, transparent 22%);
+  pointer-events: none;
+}
+
+.lib-card-header {
+  text-align: center;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: #3a2010;
+  border-bottom: 1.5px solid #8b4513;
+  padding-bottom: 6px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.lib-card-header strong { display: block; font-size: 11px; margin-bottom: 1px; }
+
+.lib-card-field {
+  display: flex;
+  border-bottom: 0.5px solid #d8c090;
+  padding: 3px 0;
+  font-size: 8.5px;
+}
+.lib-card-field .lbl { color: #9a7040; width: 52px; flex-shrink: 0; text-transform: uppercase; font-size: 7.5px; padding-top: 1px; letter-spacing: 0.06em; }
+.lib-card-field .val { color: #2c1a08; font-style: italic; flex: 1; }
+
+.lib-card-table { margin-top: 8px; }
+.lib-card-table-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 7px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #9a7040;
+  border-bottom: 1px solid #8b4513;
+  padding-bottom: 3px;
+  margin-bottom: 2px;
+}
+.lib-card-table-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 8px;
+  color: #2c1a08;
+  border-bottom: 0.5px dotted #d8c090;
+  padding: 3px 0;
+}
+.lib-card-table-row:last-child { border-bottom: none; }
+
+.lib-card-stamp-row { display: flex; justify-content: flex-end; margin-top: 6px; }
+.lib-card-stamp {
+  border: 1.5px solid #8b1010;
+  color: #8b1010;
+  font-size: 7.5px;
+  padding: 2px 7px;
+  transform: rotate(7deg);
+  letter-spacing: 0.08em;
+  background: rgba(255,220,220,0.25);
+}
+
+.lib-card-join {
+  margin-top: 8px;
+  border-top: 1px solid #c8a060;
+  padding-top: 7px;
+}
+.lib-card-join-lbl {
+  font-size: 7px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #9a7040;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.lib-card-join-row { display: flex; gap: 4px; }
+.lib-card-join-row input {
+  flex: 1;
+  font-family: 'Special Elite', monospace;
+  font-size: 8px;
+  padding: 3px 5px;
+  border: 1px solid #c8a060;
+  background: #fff8ec;
+  color: #2c1a08;
+  min-width: 0;
+}
+.lib-card-join-row input::placeholder { color: #b09060; }
+.lib-card-join-row button {
+  font-family: 'Special Elite', monospace;
+  font-size: 7.5px;
+  padding: 3px 7px;
+  background: #8b3a10;
+  color: #fff8ec;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.06em;
+}
+.lib-card-join-row button:hover { background: #a04a18; }
+
+.book-pocket {
+  width: 190px;
+  height: 30px;
+  background: #e0cfa0;
+  border: 1px solid #b09050;
+  border-top: none;
+  border-radius: 0 0 3px 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(-1.5deg);
+  margin-top: -1px;
+  box-shadow: 1px 2px 6px rgba(60,30,10,0.2);
+}
+.book-pocket span {
+  font-family: 'Special Elite', monospace;
+  font-size: 7.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #7a5a20;
+}
+
+.back-to-shelf {
+  text-align: center;
+  margin-top: 18px;
+  font-family: 'Special Elite', monospace;
+  font-size: 10px;
+  color: #9a8060;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.back-to-shelf a {
+  color: #9a8060;
+  text-decoration: none;
+}
+.back-to-shelf a:hover { color: #5a3a10; }
+
+/* ============================================================
+   ARCHIVE & ABOUT PAGES
+============================================================ */
+.simple-page {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+.simple-page h2 {
+  font-family: 'IM Fell English', serif;
+  font-size: 28px;
+  color: #3a2010;
+  margin-bottom: 20px;
+}
+.simple-page p {
+  font-family: 'IM Fell English', serif;
+  font-size: 15px;
+  color: #3a2010;
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+.archive-list { list-style: none; }
+.archive-list li {
+  border-bottom: 1px dashed #c8a870;
+  padding: 12px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+.archive-list a {
+  font-family: 'IM Fell English', serif;
+  font-size: 16px;
+  color: #3a2010;
+  text-decoration: none;
+}
+.archive-list a:hover { text-decoration: underline; }
+.archive-list .arch-meta {
+  font-family: 'Special Elite', monospace;
+  font-size: 10px;
+  color: #9a7040;
+  white-space: nowrap;
+  letter-spacing: 0.06em;
+}
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+@media (max-width: 700px) {
+  main { flex-direction: column; padding: 0 16px; }
+  .card-section { width: 100%; }
+  .book-spread { flex-direction: column; }
+  .page-left, .page-right { border-radius: 4px; }
+  .book-spine-divider { width: 100%; height: 14px; }
+  header { padding: 16px 16px 8px; }
+  .monogram { left: 16px; }
+  .site-title { font-size: 26px; }
+}
