@@ -56,13 +56,14 @@ function closeCover() {
 // ---- Step 2: show blurb ----
 function showBlurb() {
   document.getElementById('cover-overlay').style.display = 'none';
+  const cat = document.getElementById('blurb-category');
+  if (cat) cat.textContent = `${currentBook.category} · ${currentBook.number}`;
   document.getElementById('blurb-text').textContent = currentBook.blurb;
-  document.getElementById('blurb-category').textContent = `${currentBook.category} · ${currentBook.number}`;
   document.getElementById('blurb-read-link').href = currentBook.file;
   const bc = document.querySelector('.book-blurb');
   bc.style.background = `linear-gradient(160deg, ${currentBook.color} 0%, ${darken(currentBook.color, 30)} 100%)`;
+  document.getElementById('blurb-overlay').style.display = 'flex';
 }
-
 function handleBlurbClick() {
   closeBlurb();
 }
