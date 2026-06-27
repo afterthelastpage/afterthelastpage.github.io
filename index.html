@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>afterthelastpage</title>
+  <link rel="stylesheet" href="css/style.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=IM+Fell+English:ital,wght@0,400;0,700;1,400&family=Special+Elite&display=swap" rel="stylesheet"/>
+</head>
+<body>
+
+  <div class="page-bg">
+
+    <header>
+      <div class="monogram">a<sup>/</sup>e</div>
+      <h1 class="site-title">afterthelastpage</h1>
+    </header>
+
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="archive.html">Archive</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <main>
+      <div class="shelf-section">
+        <p class="shelf-label">Virtual Bookshelf</p>
+
+        <div class="shelf-wrap">
+          <div class="shelf-box">
+            <div class="books-row" id="books-row">
+              <!-- Books are injected by books.js -->
+            </div>
+            <div class="shelf-floor"></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card-section">
+        <p class="card-heading">Join the Club</p>
+        <div class="library-card-signup">
+          <div class="card-line">CARD NO: <span>#B0001</span></div>
+          <div class="card-line">AUTHOR: <span>OTSUKA</span></div>
+          <div class="card-line">TITLE: <span class="field">[YOUR NAME]</span></div>
+          <div class="card-line">DATE RESERVED: <span class="field" id="today-date"></span></div>
+          <div class="card-input-row">
+            <input type="email" id="email-input" placeholder="ENTER EMAIL TO SUBSCRIBE" aria-label="email address"/>
+            <button onclick="handleJoin()">JOIN</button>
+          </div>
+          <p class="join-confirm" id="join-confirm" style="display:none;">✓ You're on the list!</p>
+        </div>
+      </aside>
+    </main>
+
+    <!-- Book overlay: front cover -->
+    <div class="overlay" id="cover-overlay" style="display:none;" onclick="handleOverlayClick()">
+      <div class="book-cover" id="book-cover" onclick="event.stopPropagation()">
+        <div class="cover-inner">
+          <p class="cover-category" id="cover-category"></p>
+          <h2 class="cover-title" id="cover-title"></h2>
+          <div class="cover-deco"></div>
+          <p class="cover-author">Otsuka</p>
+        </div>
+        <button class="cover-btn" onclick="showBlurb()">open →</button>
+      </div>
+    </div>
+
+    <!-- Book overlay: blurb / back cover -->
+    <div class="overlay" id="blurb-overlay" style="display:none;" onclick="handleBlurbClick()">
+      <div class="book-blurb" id="book-blurb" onclick="event.stopPropagation()">
+        <p class="blurb-label">— back cover —</p>
+        <p class="blurb-text" id="blurb-text"></p>
+        <div class="blurb-actions">
+          <button onclick="closeBlurb()">← back</button>
+          <a class="blurb-read-btn" id="blurb-read-link" href="#">read →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/books.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
