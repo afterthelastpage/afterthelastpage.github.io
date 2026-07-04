@@ -44,3 +44,4 @@ const BOOKS = [
     file: "posts/tomy-mother.html"
   },
   {
+  ]
