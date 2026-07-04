@@ -43,5 +43,4 @@ const BOOKS = [
     width: 24,
     file: "posts/tomy-mother.html"
   },
-  {
-  ]
+  ];
